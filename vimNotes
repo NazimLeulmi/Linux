@@ -1,0 +1,97 @@
+Author: Nazim Leulmi , EKA Ryan
+Course: Vim Master Class
+Prof: Jason Cannon
+
+~=> Module #0 ~ Vim Quick Start <=~
+
+   1. The concept of modes :-
+
+   ~ Normal-mode :-
+            ~> You are in this mode by default.
+            ~> This is also known as the command mode.
+            ~> Case sensetive commands.
+
+   ~ Insert-mode :-  
+            ~> Access this mode by pressing "i".
+            ~> Leave the mode by pressing "ESC" or escape.
+            ~> The text you write is inserted into the buffer.
+
+   ~ Cmdline-mode :-  
+            ~> Issue/Execute commands by pressing ":".
+            ~> Execute pattern search commands by pressing "?"|"/".
+            ~> Execute the filter command by pressing "!"
+            ~> Abondon the command by pressing "ESC". 
+
+   - Some other variations of the main modes 
+
+
+   2. Basic cmdline commands :-
+
+      :q!    ~> Quit without saving.
+      :wq    ~> Write changes & quit.
+
+
+~=> Module #1 ~ Vim Essentials <=~
+
+   1. Essential navigation commands
+   
+      "j"   ~> Move down a line | down arrow .
+      "k"   ~> Move up a line | up arrow.
+      "l"   ~> Move one letter to the right | right arrow.
+      "h"   ~> Move one letter to the left | left arrow.
+      "w"   ~> Move one word to the right including punctuation.
+      "W"   ~> Move one word to the right ignoring punctuation.
+      "b"   ~> Move one word to the left including punctuation.
+      "B"   ~> Move one word to the left ignoring punctuation.
+      "0"   ~> Move to the beginning of the line.
+      "$"   ~> Move to the end of the line.
+      "!"   ~> Ignore everything and force execute the command.
+      "."   ~> Repeat the previous command.
+     n"gg"  ~> Move to the (n)'th line | it defaults to the first line.
+     n"G"   ~> Move to the (n)'th line | it defaults to the last line. 
+     ctrl-f ~> Page down | forward.
+     ctrl-b ~> Page up | backward.
+      
+ 
+   2. Deleting commands & thinking in vim :-
+
+      "X"   ~> Delete a char before the cursor position.
+      "x"   ~> Delete a char at the cursor position.
+      "dd"  ~> Delete the whole line.
+   
+      - Pattern : operation{motion}   
+
+      "dw"  ~> Delete a word on the left of the cursor .
+      "db"  ~> Delete a word on the right left of the cursor .
+      
+      - Pattern : {count}operation{motion}
+      
+      n"w"  ~> Move (n) words to the right. 
+      n"dw" ~> Delete (n) words on the right of the cursor.
+      n"dd" ~> Delete (n) lines.
+
+      - Pattern : {count}operation{count}{motion}
+      
+      "d3w" ~> Delete 3 words on the right of the cursor.
+            ~> this is equal to 3dw.
+      "2d3w"~> Delete 3 words on the right twice.
+            ~> this is equal to 6dw.
+
+
+   3. Accessing the vim manual eka help system :-
+
+      ":h|:help"
+            ~> Open the vim manual in read-only mode.
+      ":h :command"
+            ~> Open the manual and look for a specific command.
+      "Ctrl-d"
+            ~> Show all auto-completion choices. 
+      "tab"
+            ~> Loop through the auto-completion choices.
+      "Ctrl-ww"
+            ~> Switch the cursor between the manual and your file.
+
+   4. Deleting Yanking and Putting :-
+
+   
+      
