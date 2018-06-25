@@ -1,4 +1,4 @@
-Author: Nazim Leulmi , EKA Ryan
+terminologyAuthor: Nazim Leulmi , EKA Ryan
 Course: Vim Master Class
 Prof: Jason Cannon
 
@@ -22,20 +22,20 @@ Prof: Jason Cannon
             ~> Execute the filter command by pressing "!"
             ~> Abondon the command by pressing "ESC". 
 
-   - Some other variations of the main modes 
+  - Some other variations of the main modes 
 
 
    2. Basic cmdline commands :-
 
       :q!    ~> Quit without saving.
       :wq    ~> Write changes & quit.
-
+      "!"    ~> Ignore everything and force execute the command.
+      "."    ~> Repeat the previous command.
 
 ~=> Module #1 ~ Vim Essentials <=~
 
    1. Essential navigation commands
-   
-      "j"   ~> Move down a line | down arrow .
+
       "k"   ~> Move up a line | up arrow.
       "l"   ~> Move one letter to the right | right arrow.
       "h"   ~> Move one letter to the left | left arrow.
@@ -45,14 +45,12 @@ Prof: Jason Cannon
       "B"   ~> Move one word to the left ignoring punctuation.
       "0"   ~> Move to the beginning of the line.
       "$"   ~> Move to the end of the line.
-      "!"   ~> Ignore everything and force execute the command.
-      "."   ~> Repeat the previous command.
      n"gg"  ~> Move to the (n)'th line | it defaults to the first line.
      n"G"   ~> Move to the (n)'th line | it defaults to the last line. 
      ctrl-f ~> Page down | forward.
      ctrl-b ~> Page up | backward.
+
       
- 
    2. Deleting commands & thinking in vim :-
 
       "X"   ~> Delete a char before the cursor position.
@@ -93,5 +91,45 @@ Prof: Jason Cannon
 
    4. Deleting Yanking and Putting :-
 
-   
+   ~ Vim terminology :-
+      - Delete ~> Cut
+      - Put    ~> Paste
+      - Yank   ~> Copy
+      - Register ~> Clipboard like storage used to store and retrieve text.
       
+   ~ There are 3 types of registers in vim :-
+      - Unnamed ("")
+      - Contains text from the most recent yank/delete operation .
+      - Known also as the default register because it covers most of the use cases.
+      - Numbered ("1 - "9)
+         - Register "0 contains text from the most recent yank operation.
+         - Register "1 contains text from the most recent delete/change operation.
+         - With each delete/yank operation vim shifts the text through the register.
+      - Named ("a - "z)
+            ~> Full control on what goes on in each named register.
+            ~> Append to a register using an upper case letter of the same register.
+          
+      ~ Examples :-  
+
+      dd,d & x
+          ~> Delete the text and save it in "" unnamed & "1 numbered  register.
+
+      dw  ~> Delete a word on the right of the cursor and save it in "" unnamed & "1 numbered reg.
+      p   ~> Put the word on the right of the cursor.
+      P   ~> Put the word on the left of the cursor.
+      yy  ~> Yank the whole line.
+      p   ~> Put the whole line below the cursor.
+      P   ~> Put the whole line above  the cursor.
+
+      ~ Vim [count]motion patterns work with yanking, putting and deleting.
+
+      "3yy" ~> Yank 3 lines.     "4yw" ~> Yank 4 words.
+      "5dd" ~> Delete 5 lines.   "6dw" ~> Delete 6 words.
+
+   6. Text Objects & Macros :-
+      
+   - Text Objects are used after an operation/operator.
+      - Pattern : {operator}{a|i}{object}
+         ~ "daw"   ~> Delete a word & the white space after it.
+         ~ "ciw"   ~> Change inner word leaving the delimiter which is a space.
+         ~ "das"   ~> Delete a whole sentence including the delimiter.

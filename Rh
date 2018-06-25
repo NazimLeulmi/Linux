@@ -1,0 +1,249 @@
+Author: Nazim Leulmi Eka Ryan
+Course: RHCSA 2nd edition
+Prof: Sander Van Vugt
+
+1) Performing Basic Sysadmin Tasks :-
+
+- Lesson #0 - Installing and Partitioning RHEL7/CENTOS7
+
+- Lesson #1 - Using Essential Tools
+
+   |~> Finding help or docs about linux commands/configs in offline mode <~|
+
+   *- Get some help by appending --help to a familiar command
+      - Example : ls --help | less
+      - The pipe takes the output of --help,and it passes it to the
+        (less) pager to make it readable.
+      - Using --help can be more useful than using the manual in some cases.
+
+   *- Access the manual using the (man) command
+      - Specific information about the usage of a command.
+      - Man pages are usually composed of a couple of elements.
+         ~ Name   ~> Name of the command and a brief description.
+         ~ Synopsis ~> Short overview of the usage of a certain cmd.
+         ~ Description ~> Longer specific information about the cmd.
+         ~ Options ~> List of options and it's description. 
+         ~ Default configs / notes related to the command or config file.
+         ~ Related Files / See Also section (for related commands).
+ 
+      - The manual has different sections with specific topics.
+         ~ Section #1 ~> User Commands
+         ~ Section #2,3,& 4 ~> are not very important for a sysadmin.
+         ~ Section #5 ~> Configuration files.
+         ~ Section #7 ~> Different topics , background information .
+         ~ Section #8 ~> Administration and privileged commands. 
+      - When you look up a command using man , the man command loops 
+        through all the sections(1-9) until it finds something.
+      - Access the introduction of section 7 by typing: man 7 intro.
+        ~ Man will look for the introduction in section 7 only.
+      - Man Pages common syntax ~>  Eg: man ls
+         ~ Synopsis : ls [OPTION]... [FILE]...
+            ~ The square brackets signify that the option is optional.
+            ~ The 3 dots signify that you can add multiple files or options. 
+         ~ Long options are preceded by 2 dashes Eg: ls --all.
+         ~ Short options are preceded by 1 dash Eg: ls -a.
+         ~ [--optionB|--optionA], one pipe for the OR operator.
+         ~ {-x|-y}, the curly braces signify that the option is required.
+      - Useful commands/options for man :-
+         ~ "/" to search in a man page ,and "n" to move to all the  matches.
+         ~ "man -k keyword"  ~> Search man descriptions for a match.
+         ~ "mandb"  ~> Generate or update the database that -k counts on.
+         ~ "man -k user|wc" ~> Search for user & pass it to the  word counter.
+         ~ "man -k user | grep 8" ~> Looks for "user" in section 8 of man.
+         ~ "grep" ~> Universal Linux filtering utility.
+         ~ "man -k user|grep 8|grep create" ~> multiple pipes and filters.
+         
+   *- Access system docs in usr/share/doc
+      - Although this is not the recommended choice of docs,it can
+        be useful in some cases.
+ 
+
+              |~>Introduction to Vim. (check out my vim notes)<~| 
+
+            |~>Intro to the linux shell , globbing and wildcards <~|
+
+   *- Linux shell features :-
+      - Bash command interpreter that transforms commands to a desired output
+      - History is a command that allows you to look up previous used commands.
+         ~ "!n" Execute a certain command based on its (n)umber in the history.
+         ~ last 1000 commands are written in a history file to survive reboots.
+      - Reverse search by using Ctrl-r (abc)
+         ~ it will look for the last used command that starts with "abc".
+         ~ Ctrl-r to cycle through previously used commands that start with abc.
+      - Bash completion with the "Tab" key.
+         ~ Completes a command if there was 1 command that starts with the input
+         ~ Double Tab to show multiple choices that start with input.
+      - Globbing and wildcards are used to match file names and paths.
+         ~ ls host*  ~> starts with "host" and followed by (* = anything).
+         ~ ls ?ost   ~> starts with (a random char) followed by "ost".
+         ~ ls [hp]ost ~> starts with either [h|p] and followed by "ost".
+         ~ ls [!hp]ost ~> starts with any char but h|p and followed by "ost".
+
+               |~> Understanding I/O redirections and pipes <~|
+            
+   *- Pipes and I/O redirections are two important concepts in linux.
+      - Three different notions in I/O redirections.
+         ~ STDIN (standard input),it is normally what you type on your keyboard
+           , but you can use "<" redirection to get it from somewhere else.
+         ~ STDOUT (standard output),this is the output that is appearing
+           on the shell/screen , but you can use ">" to redirect it to a file 
+           overwriting it if it exists or ">>" to append a the file. 
+         ~ STDERR (standard error), refers to the error messages that might show
+           up when an error is caught , and to redirect it to a file to make it
+           readable you can use "2>"
+      - In a pipe you take the output of the first command and use it as the
+        input of the second command.
+      - Eg : man -k password | less . man -k password will produce STDOUT , and
+        the less pager will use the STDOUT as its STDIN.
+
+- Lesson #2 - Essential File Management Tools
+
+            |~> Introducing The Linux File System Layout & FHS <~|
+
+   *- Linux has some default directories that are defined by the FHS or file 
+      system hierarchy standard.
+      ~ "/" The root directory is the start of the entire file system.
+         ~ You should not create any files here .
+      ~ "/boot" is a directory that contains the kernal and the initramfs , 
+         which are responsible for booting your system.
+      ~ "/bin" is a directory that contains binaries for normal users.
+      ~ "/sbin" is a directory that contains system binaries and it requires
+         root privileges to change anything here.
+      ~ "/lib,/lib64" essential libraries for the binaries in /sbin and /bin.
+      ~ "/home" is for user home directories and files.
+      ~ "/proc" show information written by the kernal.
+      ~ "/var/log" & "/var/www".
+      ~ "man hier" fo additional reading about FHS.
+    
+   *- Essential File Management Tasks :-
+      ~ "ls"    ~> List files and directories in a certain location.
+      ~ "ls -l" ~> Long listing option to show extra info about the files.
+      ~ "ls -i" ~> List files and show the Inode for each file.
+      ~ "ls -a" ~> Show hidden files , any file that starts with a dot.
+      ~ "ls -lrt" ~> Sort files based on the modification time.
+      ~ "mkdir" ~> Create a directory or a path using the -p option.
+      ~ "touch" ~> Create a file or multiple files.
+      ~ "rmdir" ~> Remove an empty directory. (not very useful)
+      ~ "rm"    ~> Remove a file or a directory with the recursive option -r.
+      ~ "cp"    ~> Copy files from one location to another.
+      ~ "mv"    ~> Move or rename a file.
+    
+   *- Finding Files :-
+      - The find command is a powerful tool , because it allows us to search the
+        linux file system for files/dirs that meet a certain criteria and we 
+        can perform actions / pipes on the result we get back.
+
+      - The find command is rich in options.
+         ~ Finding directories inside directories.
+            ~ "find /directory -type d"
+         ~ Finding files inside directories.
+            ~ "find /myDir -type f"                
+         ~ Finding a file based on its size.
+            ~ "find /etc -size +200M" (files over 200MB).
+            ~ "find . -empty" (find all empty files in the current directory).
+         ~ Finding files/dirs based on their name name (we can use wildcards).
+            ~ "find / -type f -name '*.js'" (find all javascript files in root)
+         ~ Finding files/dirs based on their metadata 
+            ~ "find ~ -type f -mtime -2"( modified files in last 48 hours)
+            ~ "find . -type f -amin -45" ( accessed last 45 mins)
+            ~ "find . -type f -ctime +3 (changed more than 3 days ago)
+         ~ Finding files/dirs based on permissions.
+            ~ "find . -perm 777" (find all files with read/write/execute perms)
+         ~ Executing commands on Find's result.
+            ~ "find . -perm 777 -exec chmod 775 {} +"
+               ~ find all files with perms 777 and change them to 775.
+
+   *- Understanding Hard Links & Symbolic Links in linux :-
+      - Hard drive structure and the concept of Inodes.
+      - On a typical unix system a hard drive is divided into 3 different parts.
+         ~ The Super block contains info about file system.(type,size,status..)
+         ~ The Inode table and each Inode contains :-
+            ~ info about the files in your system .
+               - Mode/permissions , size & ownership .
+               - Timestamp of the file c,a,m.
+               - Data Block which contains pointers to the actual data blocks.
+         ~ Data is stored in the Data blocks.
+            - Every block has one or several Inodes pointing to it
+      - In some cases data can be recovered because when you delete a file the 
+        Inode pointer gets unlinked from the data block and the data stays in
+        disk until it gets overwritten.
+      - Soft Links are similar to C++ pointers because they share some features.
+         ~ One file can have multiple soft links , or multiple pointers can 
+           point at the same file or node. 
+         ~ Changes made to the soft link will be applied to the original file.
+         ~ When a soft link is deleted , the original file stays intact.
+         ~ When a file is deleted any soft link pointing to that file will point
+           to null or nothing (the link/pointer becomes a hanging link )
+         ~ Soft links can be linked across different file systems.
+      - Hard Links are similar to C++ references because ....
+         ~ Each hard linked file is assigned the same Inode value as the original
+           , therefore they reference the same physical file location.
+         ~ Removing a hard link, reduces the link count, but the original file
+          stays intact (ls -li).
+         ~ Hard links have the content of the orignal file.   
+
+   *- Archiving and Compressing files in Linux.
+      - Archiving vs Compressing
+         ~ Archiving is creating a single file that contains a list of files.
+         ~ Compression is using some advanced algorithms to look for patterns
+           ,and that usually makes the file smaller in size .
+      - Tar is a powerful command from the 1970's and it stands for tape archive
+         because tapes were the only way of archiving anything .
+      - Important flags/options for tar.
+         ~ "-c"   ~> Create a new archive.
+         ~ "-v"   ~> Verbosely list files processed.
+         ~ "-f"   ~> Specify a file/archive name.
+         ~ "-x"   ~> Extract all files in an archive.
+         ~ "-t"   ~> List all files in an archive.
+         ~ "-C"   ~> Change to a directory before extracting.
+         ~ "-z"   ~> Use gzip to compress the archive.
+         ~ "-j"   ~> Use bzip2 to compress the archive.
+      - Tar common use cases.
+         ~ "tar -cvf Archive.tar /dir" ~> Create an archive.
+         ~ "tar -tvf Archive.tar" ~> Check the content of an archive.
+         ~ "tar -xvf Archive.tar" ~> Extract files in your current directory.
+         ~ "tar xvf Archive.tar -C /etc"~> Extract files in a specific directory
+      - Other compression tools.
+         ~ The generic "zip" utility  offers a high level of compatibility.
+           with other operating systems.
+         ~ "gzip" has been the default in linux for a long period of time .
+         ~ "bzip2" a newer compression utility with faster algorithms.
+         ~ The two most common compression utilities are "bzip2" and "gzip".
+            ~ "gzip File" To compress a file using gzip. 
+            ~ "gunzip File.gz" To uncompress a gzip file.
+            ~ "bzip2 File" To compress a file using bzip2 which is faster.
+            ~ "bunzip2 File.bz2" To uncompress a bzip2 compressed file.
+         ~ Using tar to archive and [bzip2|gzip] to compress a file.
+            ~ "tar czvf comp.tgz /dir" ~> .tar.gz compressed archive with gzip
+            ~ "tar cjvf comp.tbz /dir" ~> .tar.bz2 compressed archive with bzip2
+
+
+- Lesson #3 - Working with Text Files .
+
+   *- Intro to regular expressions :-
+      - Regular Expressions are text patterns that are used by tools like grep
+        and some other text-processing utilities to find text.
+         ~ grep , vim , awk , and sed are utilities that use REGEX .
+      - Don't confuse regular expressions with wildcards.
+      - "man 7 regex" for additional reading about the topic.
+      - Most common REGEX characters and their meaning.
+         ~ "^"      ~> Beginning/Start of a string.
+            ~ Example : "^abc"   ~> any string that starts with "abc".
+         ~ "$"      ~> End of a string.
+            ~ Example : "abc$"   ~> any string that ends with "abc".
+         ~ "."      ~> Any Character except the new line.
+            ~ Example : "a.c"    ~> "a(anything)c".
+         ~ "|"      ~> Alteration , OR operator.
+            ~ Example : "^c|b"   ~> any string that starts with "c" or "b".
+         ~ "{}"     ~> Refers to the explicit quantity of the preceding char.
+            ~ Example : "^a{2}"  ~> any string that starts with 2 (a)s .
+         ~ "[]"     ~> Explicit set of characters to match .
+            ~ Example : "[ab]$"  ~> any string that ends with "a|b".
+         ~ "()"     ~> Group of characters.
+            ~ Example : "(ab){2}^" ~> any string that starts with "abab".
+         ~ "*"      ~> Null or more of the preceding character.
+            ~ Example : "ab*c"     ~> 
+         ~ "+"      ~> One or more of the preceding character.
+            ~ Example : "ab+c"     ~> the string must have at least 1 b.
+         ~ "?"      ~> Null or one of the preceding character (optional char).
+            ~ Example : "a?c*"     ~> any string that ends with "ac|c".
