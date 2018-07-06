@@ -392,3 +392,23 @@ sudo groupdel annaba # Delete a group
 cut -d : -f1 /etc/group | sort # check by listing all groups in the system .
 sudo groupmod -n Annaba annaba # change a group's name or any group property.
 ```
+
+### 4.3 - Remote Authentication in Linux
+
+- In Remote Auth we keep the usernames and passwords on a server.
+   - AD : windows active directory if you are using windows
+   - LDAP server which is common on linux.
+- By default,the login utility will look for user credentials in **/etc/passwd**
+- **PAM** stands for pluggable Auth Modules which made connecting to other Auth sources easier in Linux.
+- The login utility is PAM aware so we can create a config that will redirect logins to the Auth server.
+----
+## 5 - Managing Linux Permissions and Quota
+### 5.1 - An Intro to Linux permissions.
+
+- Linux permissions were developed in the early 1970's , so they were designed for trusted environments because external security threats like the internet and remote computing didn't exist.
+- Linux has to check file/dir ownership to determine a user's permissions
+- Every file/dir in Linux has a **u**ser owner , **g**roup owner , and **o**ther owners. 
+- The basic Linux permissions are :-
+   - **Read < 4 >** permits us to read files , or list files in a directory.
+   - **Write < 2 >** permits us to modify files , create or delete files in a directory. 
+   - **Execute < 3 >** permits us to execute scripts or `cd` in a directory.
