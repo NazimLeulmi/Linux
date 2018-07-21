@@ -9,6 +9,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bash-support.vim'
+Plugin 'gertjanreynaert/cobalt2-vim-theme'
+Plugin 'plasticboy/vim-markdown'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 set nocompatible
@@ -27,4 +31,6 @@ set shiftwidth=3
 set expandtab
 set number
 set relativenumber
+color Monokai
+
 
