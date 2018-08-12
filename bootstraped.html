@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2018-08-09 Thu 16:36 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="ryan">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title"></h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> what is org-mode ?</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Its a a system within emacs for organizing notes and tasks.
+</li>
+<li>Org-mode is an example of an exocortex.
+</li>
+<li>Something to rely on other than your brain to remember things.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> org-mode features</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Get organized and stop forgetting things 
+</li>
+<li>Maintain focus on the task
+</li>
+<li>Outlining , with easy folding 'tab' 
+<ul class="org-ul">
+<li>helps with maintaining focus
+</li>
+</ul>
+</li>
+<li>Task management &amp; to-do lists 't'
+<ul class="org-ul">
+<li>task uno
+</li>
+<li>2nd task 
+</li>
+<li>3rd  task
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>
+Progress indicators <code>[0/0]</code>
+TODO task uno
+DONE 2nd task 
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:27]</span></span>
+DONE 3rd  task
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:27]</span></span>
+Percentage progress indicator <code>[0%]</code>
+DONE task uno
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:29]</span></span>
+DONE 3rd task 
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:29]</span></span>
+DONE 2nd task 
+    CLOSED:  A table consists of a rectangular text are
+CA
+9+
+a which is divided inox-gfmto cells. Each cell must be at least onox-gfme character wide and one character highttps://www.youtube.com/results?search<sub>query</sub>=org+mode+export+to+bootstraph, not counting its border lines. A cell can be subdivided into more cells, but they cannot overlap. <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:29]</span></span>
+TODO 2nd task 
+TODO 2nd task 
+Scheduling and working with an agenda 
+</p>
+<ul class="org-ul">
+<li>lets write some text
+<ul class="org-ul">
+<li>barber
+</li>
+<li>shopping
+</li>
+<li>dog walk
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Markup</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-0-1" class="outline-4">
+<h4 id="sec-3-0-1"><span class="section-number-4">3.0.1</span> Text Transformations</h4>
+<div class="outline-text-4" id="text-3-0-1">
+<ul class="org-ul">
+<li><i>italic</i> text
+</li>
+<li><b>bold</b> text
+</li>
+<li><code>verbatim</code>
+</li>
+<li><del>stroke through</del> text
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-2" class="outline-4">
+<h4 id="sec-3-0-2"><span class="section-number-4">3.0.2</span> Links [[address][description]\]</h4>
+<div class="outline-text-4" id="text-3-0-2">
+<ul class="org-ul">
+<li>C-c + C-l to create a link automatically
+</li>
+<li>HTTP links
+<a href="https://github.com//ryanLeulmi">my github</a>
+</li>
+<li>Local Links to files / todos / files / etc..
+<a href="file:///home/ryan/.spacemacs">dotspacemacs</a>
+</li>
+<li>C-c + C-o to open a local link in a new buffer
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-3" class="outline-4">
+<h4 id="sec-3-0-3"><span class="section-number-4">3.0.3</span> Smarter Tables</h4>
+<div class="outline-text-4" id="text-3-0-3">
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Student #</th>
+<th scope="col" class="text-left">Email</th>
+<th scope="col" class="text-left">Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">ryan</td>
+<td class="text-left">ryanleulmi@gmail.com</td>
+<td class="text-left">1234</td>
+</tr>
+
+<tr>
+<td class="text-left">student</td>
+<td class="text-left">another one</td>
+<td class="text-left">asd21</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Export to other formats from the same source</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>C-c + C-e
+</li>
+</ul>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. what is org-mode ?</a></li>
+<li><a href="#sec-2">2. org-mode features</a></li>
+<li><a href="#sec-3">3. Markup</a></li>
+<li><a href="#sec-4">4. Export to other formats from the same source</a></li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: ryan</p>
+<p class="date">Created: 2018-08-09 Thu 16:36</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org-mode</a> 9.1.13)</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+* what is org-mode ?
+  - Its a a system within emacs for organizing notes and tasks.
+  - Org-mode is an example of an exocortex.
+  - Something to rely on other than your brain to remember things.
+* org-mode features
+- Get organized and stop forgetting things 
+- Maintain focus on the task
+- Outlining , with easy folding 'tab' 
+  - helps with maintaining focus
+- Task management & to-do lists 't'
+  - task uno
+  - 2nd task 
+  - 3rd  task
+Progress indicators [0/0]
+TODO task uno
+DONE 2nd task 
+    CLOSED: [2018-08-06 Mon 19:27]
+DONE 3rd  task
+    CLOSED: [2018-08-06 Mon 19:27]
+Percentage progress indicator [0%]
+DONE task uno
+    CLOSED: [2018-08-06 Mon 19:29]
+DONE 3rd task 
+    CLOSED: [2018-08-06 Mon 19:29]
+DONE 2nd task 
+    CLOSED:  A table consists of a rectangular text are
+CA
+9+
+a which is divided inox-gfmto cells. Each cell must be at least onox-gfme character wide and one character highttps://www.youtube.com/results?search_query=org+mode+export+to+bootstraph, not counting its border lines. A cell can be subdivided into more cells, but they cannot overlap. [2018-08-06 Mon 19:29]
+TODO 2nd task 
+TODO 2nd task 
+Scheduling and working with an agenda 
+- lets write some text
+   - barber
+   - shopping
+   - dog walk
+* Markup 
+*** Text Transformations
+    - /italic/ text
+    - *bold* text
+    - =verbatim=
+    - +stroke through+ text
+*** Meta Data
+    - Title
+      #+TITLE: A Quick Introduction to Org-mode
+    - Options [disable/enable] features
+      #+OPTIONS: toc:nill 
+*** Links [[address][description]\]
+    - C-c + C-l to create a link automatically
+    - HTTP links
+      [[https://github.com//ryanLeulmi][my github]]
+    - Local Links to files / todos / files / etc..
+      [[file:~/.spacemacs][dotspacemacs]]
+    - C-c + C-o to open a local link in a new buffer
+*** Source Code
+    - =<s + tab= to create a code block
+    - =C-c + '= to open a code block in a new buffer with it's mode
+#+BEGIN_SRC bash
+  export PATH="`yarn global bin`:$PATH"
+#+END_SRC
+
+*** Smarter Tables
+    | Student # | Email                | Password |
+    |-----------+----------------------+----------|
+    | ryan      | ryanleulmi@gmail.com | 1234     |
+    | student   | another one          | asd21    |
+* Export to other formats from the same source
+  - C-c + C-e
+  

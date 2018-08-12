@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-08-09 Thu 16:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ryan" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org22cc596">1. what is org-mode ?</a></li>
+<li><a href="#org67dad51">2. org-mode features</a></li>
+<li><a href="#orgc80d2f9">3. Markup</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org3d7965e">3.0.1. Text Transformations</a></li>
+<li><a href="#orgb4a1924">3.0.2. Links [[address][description]\]</a></li>
+<li><a href="#org3529e92">3.0.3. Smarter Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8e42732">4. Export to other formats from the same source</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org22cc596" class="outline-2">
+<h2 id="org22cc596"><span class="section-number-2">1</span> what is org-mode ?</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Its a a system within emacs for organizing notes and tasks.</li>
+<li>Org-mode is an example of an exocortex.</li>
+<li>Something to rely on other than your brain to remember things.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org67dad51" class="outline-2">
+<h2 id="org67dad51"><span class="section-number-2">2</span> org-mode features</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Get organized and stop forgetting things</li>
+<li>Maintain focus on the task</li>
+<li>Outlining , with easy folding 'tab' 
+<ul class="org-ul">
+<li>helps with maintaining focus</li>
+</ul></li>
+<li>Task management &amp; to-do lists 't'
+<ul class="org-ul">
+<li>task uno</li>
+<li>2nd task</li>
+<li>3rd  task</li>
+<li></li>
+</ul></li>
+</ul>
+<p>
+Progress indicators <code>[0/0]</code>
+TODO task uno
+DONE 2nd task 
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:27]</span></span>
+DONE 3rd  task
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:27]</span></span>
+Percentage progress indicator <code>[0%]</code>
+DONE task uno
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:29]</span></span>
+DONE 3rd task 
+    CLOSED: <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:29]</span></span>
+DONE 2nd task 
+    CLOSED:  A table consists of a rectangular text are
+CA
+9+
+a which is divided inox-gfmto cells. Each cell must be at least onox-gfme character wide and one character highttps://www.youtube.com/results?search<sub>query</sub>=org+mode+export+to+bootstraph, not counting its border lines. A cell can be subdivided into more cells, but they cannot overlap. <span class="timestamp-wrapper"><span class="timestamp">[2018-08-06 Mon 19:29]</span></span>
+TODO 2nd task 
+TODO 2nd task 
+Scheduling and working with an agenda 
+</p>
+<ul class="org-ul">
+<li>lets write some text
+<ul class="org-ul">
+<li>barber</li>
+<li>shopping</li>
+<li>dog walk</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc80d2f9" class="outline-2">
+<h2 id="orgc80d2f9"><span class="section-number-2">3</span> Markup</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org3d7965e" class="outline-4">
+<h4 id="org3d7965e"><span class="section-number-4">3.0.1</span> Text Transformations</h4>
+<div class="outline-text-4" id="text-3-0-1">
+<ul class="org-ul">
+<li><i>italic</i> text</li>
+<li><b>bold</b> text</li>
+<li><code>verbatim</code></li>
+<li><del>stroke through</del> text</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb4a1924" class="outline-4">
+<h4 id="orgb4a1924"><span class="section-number-4">3.0.2</span> Links [[address][description]\]</h4>
+<div class="outline-text-4" id="text-3-0-2">
+<ul class="org-ul">
+<li>C-c + C-l to create a link automatically</li>
+<li>HTTP links
+<a href="https://github.com//ryanLeulmi">my github</a></li>
+<li>Local Links to files / todos / files / etc..
+<a href="file:///home/ryan/.spacemacs">dotspacemacs</a></li>
+<li>C-c + C-o to open a local link in a new buffer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3529e92" class="outline-4">
+<h4 id="org3529e92"><span class="section-number-4">3.0.3</span> Smarter Tables</h4>
+<div class="outline-text-4" id="text-3-0-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Student #</th>
+<th scope="col" class="org-left">Email</th>
+<th scope="col" class="org-left">Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">ryan</td>
+<td class="org-left">ryanleulmi@gmail.com</td>
+<td class="org-left">1234</td>
+</tr>
+
+<tr>
+<td class="org-left">student</td>
+<td class="org-left">another one</td>
+<td class="org-left">asd21</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e42732" class="outline-2">
+<h2 id="org8e42732"><span class="section-number-2">4</span> Export to other formats from the same source</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>C-c + C-e</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ryan</p>
+<p class="date">Created: 2018-08-09 Thu 16:34</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
