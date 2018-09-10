@@ -1,0 +1,142 @@
+% Created 2018-08-19 Sun 16:13
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{ryan}
+\date{\today}
+\title{A Quick Introduction to Org-mode}
+\hypersetup{
+ pdfauthor={ryan},
+ pdftitle={A Quick Introduction to Org-mode},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.2 (Org mode 9.1.13)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section*{what is org-mode ?}
+\label{sec:orgdec7fb4}
+\begin{itemize}
+\item It is a mode within emacs that started its life as an outliner .
+\item org mode is usually used as a markup language to write notes ,to do lists , and much more.
+\item It is an example of an exocortex , which is something to rely on other than your brain to remember things.
+\end{itemize}
+\section*{org-mode features}
+\label{sec:org53d0999}
+\begin{itemize}
+\item Easy outlining with \texttt{tab} folding to maximize focus on the task.
+\item Task management \& to-do lists with different states
+\begin{itemize}
+\item \texttt{t} to cycle through the different states of the list item.
+\end{itemize}
+\end{itemize}
+\subsubsection*{To do lists must be headers}
+\label{sec:org4e9d305}
+\begin{itemize}
+\item {\bfseries\sffamily DONE} task uno
+\label{sec:orgf62d7a0}
+\item {\bfseries\sffamily TODO} 2nd task
+\label{sec:org7b27fd7}
+\item {\bfseries\sffamily TODO} 3rd  task
+\label{sec:org6842279}
+\end{itemize}
+\subsubsection*{Progress indicators [2/3]}
+\label{sec:orge418c8f}
+\begin{itemize}
+\item {\bfseries\sffamily TODO} barber
+\label{sec:orga622b64}
+\item {\bfseries\sffamily DONE} walk dog
+\label{sec:org72b6379}
+\item {\bfseries\sffamily DONE} launch
+\label{sec:org0999887}
+\end{itemize}
+\subsubsection*{Percentage indicators [75\%]}
+\label{sec:org4d21d18}
+\begin{itemize}
+\item {\bfseries\sffamily DONE} wash car
+\label{sec:org8431209}
+\item {\bfseries\sffamily DONE} cook dinner
+\label{sec:org9f8fb50}
+\item {\bfseries\sffamily TODO} run
+\label{sec:org137f0b3}
+\item {\bfseries\sffamily DONE} shower
+\label{sec:org64102ee}
+\end{itemize}
+
+\section*{Markup}
+\label{sec:org851b625}
+\subsubsection*{Text Transformations}
+\label{sec:org0680bed}
+\begin{itemize}
+\item \emph{italic} text
+\item \textbf{bold} text
+\item \texttt{verbatim}
+\item \sout{stroke through} text
+\end{itemize}
+\subsubsection*{Meta Data}
+\label{sec:orga16078f}
+\begin{itemize}
+\item Title
+\item Options [disable/enable] features
+\end{itemize}
+\subsubsection*{Links \texttt{[[address][description]]}}
+\label{sec:orga48f3cb}
+\begin{itemize}
+\item C-c + C-l to create a link automatically
+\item HTTP links
+\href{https://github.com//ryanLeulmi}{my github}
+\item Local Links to files / todos / files / etc..
+\href{file:///home/ryan/.spacemacs}{dotspacemacs}
+\item C-c + C-o to open a local link in a new buffer
+\end{itemize}
+\subsubsection*{Source Code}
+\label{sec:org8433b50}
+\begin{itemize}
+\item \texttt{<s + tab} to create a code block
+\item \texttt{C-c + '} to open a code block in a new buffer with it's mode
+\end{itemize}
+\begin{verbatim}
+export PATH="`yarn global bin`:$PATH"
+\end{verbatim}
+\subsubsection*{Raw HTML export}
+\label{sec:org69594fa}
+\begin{verbatim}
+#+BEGIN_EXPORT html
+<h3> RAW HTML </h3>
+#+END_EXPORT
+\end{verbatim}
+\subsubsection*{Smarter Tables}
+\label{sec:org9ccc183}
+\begin{center}
+\begin{tabular}{lll}
+Student \# & Email & Password\\
+\hline
+ryan & ryanleulmi@gmail.com & 1234\\
+student & another one & asd21\\
+\end{tabular}
+\end{center}
+\section*{Export to other formats from the same source}
+\label{sec:org500ad24}
+\begin{itemize}
+\item C-c + C-e
+\item twitter bootstrap \texttt{ox-twbs}
+\item html , pdf , markdown \texttt{ox-gfm}
+\item \texttt{org-export-backends} to manage your export backends.
+\item \texttt{org-file-apps} to change which apps your export backends use.
+\end{itemize}
+\end{document}

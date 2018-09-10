@@ -1,39 +1,31 @@
-* what is org-mode ?
-  - Its a a system within emacs for organizing notes and tasks.
-  - Org-mode is an example of an exocortex.
-  - Something to rely on other than your brain to remember things.
+* what is org-mode ? 
+  - It is a mode within emacs that started its life as an outliner .
+  - org mode is usually used as a markup language to write notes ,to do lists , and much more. 
+  - It is an example of an exocortex , which is something to rely on other than your brain to remember things.
 * org-mode features
-- Get organized and stop forgetting things 
-- Maintain focus on the task
-- Outlining , with easy folding 'tab' 
-  - helps with maintaining focus
-- Task management & to-do lists 't'
-  - task uno
-  - 2nd task 
-  - 3rd  task
-Progress indicators [0/0]
-TODO task uno
-DONE 2nd task 
-    CLOSED: [2018-08-06 Mon 19:27]
-DONE 3rd  task
-    CLOSED: [2018-08-06 Mon 19:27]
-Percentage progress indicator [0%]
-DONE task uno
-    CLOSED: [2018-08-06 Mon 19:29]
-DONE 3rd task 
-    CLOSED: [2018-08-06 Mon 19:29]
-DONE 2nd task 
-    CLOSED:  A table consists of a rectangular text are
-CA
-9+
-a which is divided inox-gfmto cells. Each cell must be at least onox-gfme character wide and one character highttps://www.youtube.com/results?search_query=org+mode+export+to+bootstraph, not counting its border lines. A cell can be subdivided into more cells, but they cannot overlap. [2018-08-06 Mon 19:29]
-TODO 2nd task 
-TODO 2nd task 
-Scheduling and working with an agenda 
-- lets write some text
-   - barber
-   - shopping
-   - dog walk
+  - Easy outlining with =tab= folding to maximize focus on the task. 
+  - Task management & to-do lists with different states
+  - =t= to cycle through the different states of the list item.
+*** To do lists must be headers 
+**** DONE task uno
+     CLOSED: [2018-08-19 Sun 14:57]
+**** TODO 2nd task 
+**** TODO 3rd  task
+***  Progress indicators [2/3]
+**** TODO barber
+**** DONE walk dog
+     CLOSED: [2018-08-19 Sun 15:04]
+**** DONE launch
+     CLOSED: [2018-08-19 Sun 15:04]
+*** Percentage indicators [75%]
+**** DONE wash car
+     CLOSED: [2018-08-19 Sun 16:18]
+**** DONE cook dinner
+     CLOSED: [2018-08-19 Sun 15:07]
+**** TODO run
+**** DONE shower
+     CLOSED: [2018-08-19 Sun 15:07]
+ 
 * Markup 
 *** Text Transformations
     - /italic/ text
@@ -43,9 +35,13 @@ Scheduling and working with an agenda
 *** Meta Data
     - Title
       #+TITLE: A Quick Introduction to Org-mode
-    - Options [disable/enable] features
-      #+OPTIONS: toc:nill 
-*** Links [[address][description]\]
+      =#+TITLE: A Quick Introduction to Org-mode=
+    - Options to [disable/enable] features.
+      #+OPTIONS: num:nil toc:t
+      =#+OPTIONS: num:nil toc:t=
+      #+AUTHOR: Ryan Leulmi
+      =#+AUTHOR: Ryan Leulmi=
+*** Links =[[address][description]]=
     - C-c + C-l to create a link automatically
     - HTTP links
       [[https://github.com//ryanLeulmi][my github]]
@@ -55,15 +51,29 @@ Scheduling and working with an agenda
 *** Source Code
     - =<s + tab= to create a code block
     - =C-c + '= to open a code block in a new buffer with it's mode
+    - =C-c + C-c= to evaluate a code block with its compiler
+    - LateX + Math integration
 #+BEGIN_SRC bash
   export PATH="`yarn global bin`:$PATH"
 #+END_SRC
-
+*** Raw HTML export
+#+BEGIN_SRC org
+,#+BEGIN_EXPORT html
+<h3> RAW HTML </h3>
+,#+END_EXPORT
+#+END_SRC
 *** Smarter Tables
+    - org mode tables are smart spread sheets
     | Student # | Email                | Password |
     |-----------+----------------------+----------|
     | ryan      | ryanleulmi@gmail.com | 1234     |
     | student   | another one          | asd21    |
 * Export to other formats from the same source
   - C-c + C-e
-  
+  - twitter bootstrap =ox-twbs=
+  - html , pdf , markdown =ox-gfm=
+  - =org-export-backends= to manage your export backends.
+  - =org-file-apps= to change which apps your export backends use.
+* Literate programming
+  - =C-c + C-c= to evaluate a code block with its compiler
+  - Evaluate all the code blocks in an org file
